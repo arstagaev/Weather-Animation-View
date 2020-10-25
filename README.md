@@ -11,5 +11,5 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.arstagaev:Weather-Animation-View:Tag'
+	        implementation 'com.github.arstagaev:Weather-Animation-View:0.1'
 	}
