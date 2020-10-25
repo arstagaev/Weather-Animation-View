@@ -1,0 +1,3 @@
+include ':WeatherAnimation'
+include ':app'
+rootProject.name = "WeatherAnimationExample"
