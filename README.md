@@ -1,4 +1,4 @@
-# Weather-Animation-View
+# Weather-Animation-View. Work in progress :construction:
 
 <table style= padding:10px">
   <tr>
