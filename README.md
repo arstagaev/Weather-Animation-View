@@ -1,4 +1,5 @@
 # Weather-Animation-View. Work in progress :construction:
+coming soon i will change thread sleep to timer. 
 
 <table style= padding:10px">
   <tr>
