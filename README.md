@@ -1,5 +1,5 @@
-# Weather-Animation-View. Work in progress :construction:
-coming soon i will change `thread sleep` to `timer`. 
+# Weather-Animation-View.
+
 
 <table style= padding:10px">
   <tr>
@@ -43,3 +43,5 @@ in Activity:
  n = 0 for loading preview,
  n = 1 snow,
  n = 2 rain
+
+    wa.

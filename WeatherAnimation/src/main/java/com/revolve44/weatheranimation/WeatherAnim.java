@@ -13,37 +13,33 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-/*
+import java.util.Timer;
+import java.util.TimerTask;
+
+/**
 author @arstagaev, 2020
  */
 
 public class WeatherAnim extends View {
 
-    Space space = new Space();
-    Snow snow = new Snow();
-    Rain rain = new Rain();
+    private final Space space = new Space();
+    private final Snow snow = new Snow();
+    private final Rain rain = new Rain();
 
     private Paint paint;
 
-    private int sizeoval = 4;
-
-
-
-    public int typeOfweather = 0; // main
-    public int NUMofELEMENTS = 400; // main
-    public int DELAY_FPS = 2; //main
-    public int SPEED = 4; // main
+    private final int sizeoval = 4;
+    private int typeOfweather = 0; // main
+    private int NUMofELEMENTS = 400; // main
+    private int SPEED = 4; // main
 
     private int REFRESHING = 100; // main .border for refresh
-
     private int halfwidth, halfheight = 0;
-
-
 
     //set sizes
     DisplayMetrics displaymetrics = new DisplayMetrics();
-    public int width =  displaymetrics.widthPixels;
-    public int height = displaymetrics.heightPixels;
+    private int width =  displaymetrics.widthPixels;
+    private int height = displaymetrics.heightPixels;
 
 
 
@@ -54,7 +50,6 @@ public class WeatherAnim extends View {
 
     public WeatherAnim(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        //init(context, attrs);
     }
 
 
@@ -70,11 +65,11 @@ public class WeatherAnim extends View {
                     space.init(NUMofELEMENTS,SPEED,height,width);
                     break;
                 case 1:
-                    //SPEED = 2;  // recomend
+                    //SPEED = 2;  // recommend
                     snow.init(NUMofELEMENTS,SPEED,height,width);
                     break;
                 case 2:
-                    //SPEED = 12; // recomend
+                    //SPEED = 12; // recommend
                     NUMofELEMENTS = 50;
                     rain.init(NUMofELEMENTS,SPEED,height,width);
                     break;
@@ -86,7 +81,7 @@ public class WeatherAnim extends View {
     }
 
 
-    public void refreshView(){
+    private void refreshView(){
         /*
         USE this if you need manual real time settings with SeekBars
          */
@@ -98,6 +93,10 @@ public class WeatherAnim extends View {
 
     }
 
+    /**
+     * Types of animation: 0: space, 1: snow, 2: rain
+     * @param TypeofWeather
+     */
     public void init(int TypeofWeather) {
         typeOfweather = TypeofWeather;
         onSizeChanged(width,height,width,height);
@@ -161,40 +160,42 @@ public class WeatherAnim extends View {
             }
         }
 
-        try { Thread.sleep(DELAY_FPS); }
-        catch (Exception e) { e.printStackTrace(); }
         invalidate();
     }
 
+    /**
+     * Types of animation: 0: space, 1: snow, 2: rain
+     * @param typeOfweather
+     */
     public void setTypeOfweather(int typeOfweather) {
         if (typeOfweather>=0 & typeOfweather<=2){
             this.typeOfweather = typeOfweather;
-        }else{ Log.e("ERROR in Library", "WRONG input NUM");}
+        }else{ Log.e("ERROR in Library", "WRONG input setTypeOfweather");}
         refreshView();
         invalidate();
 
     }
 
+    /**
+     * Set number of animated elements: from 0 to 10000
+     * @param NUMofELEMENTS
+     */
     public void setNUMofELEMENTS(int NUMofELEMENTS) {
         if (NUMofELEMENTS>=0 & NUMofELEMENTS<10000){
             this.NUMofELEMENTS = NUMofELEMENTS;
-        }else{ Log.e("ERROR in Library", "WRONG input NUM");}
+        }else{ Log.e("ERROR in Library", "WRONG input setNUMofELEMENTS");}
         refreshView();
         invalidate();
     }
 
-    public void setDELAY_FPS(int DELAY_FPS) {
-        if (DELAY_FPS>=0){
-            this.DELAY_FPS = DELAY_FPS;
-        }else{ Log.e("ERROR in Library", "WRONG input NUM");}
-        refreshView();
-        invalidate();
-    }
-
+    /**
+     * Speed of animation normal settings: from 4 to 10
+     * @param SPEED
+     */
     public void setSPEED(int SPEED) {
         if (SPEED>=0){
             this.SPEED = SPEED;
-        }else{ Log.e("ERROR in Library", "WRONG input NUM");}
+        }else{ Log.e("ERROR in Library", "WRONG input setSPEED");}
         refreshView();
         invalidate();
     }
@@ -202,7 +203,7 @@ public class WeatherAnim extends View {
     public void setREFRESHING(int REFRESHING) {
         if (REFRESHING>=0) {
             this.REFRESHING = REFRESHING;
-        }else{ Log.e("ERROR in Library", "WRONG NUM");}
+        }else{ Log.e("ERROR in Library", "WRONG setREFRESHING");}
         refreshView();
         invalidate();
     }

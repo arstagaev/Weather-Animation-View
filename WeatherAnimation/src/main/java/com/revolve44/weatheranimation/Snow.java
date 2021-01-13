@@ -27,7 +27,7 @@ public class Snow  implements WeatherPrinciple{
             //Also init all the drops
             xSnowFlake.add(rand.nextFloat()*widthX);
             ySnowFlake.add(-rand.nextFloat()*heightY);
-            speedFlakes.add(rand.nextFloat()*6);
+            speedFlakes.add(rand.nextFloat()*6*SPEED);
 
         }
         Log.i("snow array", "xSnow "+xSnowFlake.toString());
