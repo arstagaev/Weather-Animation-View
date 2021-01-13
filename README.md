@@ -4,13 +4,10 @@
 <table style= padding:10px">
   <tr>
     <td>  <img src="./snowanim.gif"  alt="1" width = 300px height = 600px ></td>
-      
-</table>
-<table style= padding:10px">
-  <tr>
     <td>  <img src="./rainanim.gif"  alt="1" width = 300px height = 600px ></td>
       
 </table>
+
 
 Add it in your root build.gradle at the end of repositories:
 
