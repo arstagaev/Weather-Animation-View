@@ -46,5 +46,3 @@ in Activity:
  n = 0 for loading preview,
  n = 1 snow,
  n = 2 rain
-
-    wa.
