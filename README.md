@@ -35,7 +35,7 @@ in xml:
 
     </com.revolve44.weatheranimation.WeatherAnim>
 
-in Activity:
+in class(for example):
     
     WeatherAnim wa;
     
