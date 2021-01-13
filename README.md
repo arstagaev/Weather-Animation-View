@@ -43,6 +43,6 @@ in Activity:
     wa.init(n);
     
  n is type of weather:
- n = 0 for loading preview,
+ n = 0 for loading preview (space, ftl jump),
  n = 1 snow,
  n = 2 rain
