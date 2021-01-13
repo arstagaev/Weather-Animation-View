@@ -3,8 +3,8 @@
 
 <table style= padding:10px">
   <tr>
-    <td>  <img src="./snowanim.gif"  alt="1" width = 300px height = 600px ></td>
-    <td>  <img src="./rainanim.gif"  alt="1" width = 300px height = 600px ></td>
+    <td>  <img src="./snowanim.gif"  alt="1" width = 300px height = 400px ></td>
+    <td>  <img src="./rainanim.gif"  alt="1" width = 300px height = 400px ></td>
     <td>  <img src="./spaceanim.gif"  alt="1" width = 300px height = 600px ></td>
       
 </table>
